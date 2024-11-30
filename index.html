@@ -1,9 +1,21 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <tittle>hola</tittle>
-  </head>
-  <body>
-    <h1>Hola a todos y todas, que tengan un excelente dia</h1>
-  </body>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulario de Captura</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Formulario de Captura</h1>
+  <form id="dataForm">
+    <label for="name">Nombre:</label>
+    <input type="text" id="name" name="name" required><br><br>
+    <label for="email">Correo electrónico:</label>
+    <input type="email" id="email" name="email" required><br><br>
+    <input type="submit" value="Enviar">
+  </form>
+
+  <script src="app.js"></script>
+</body>
 </html>
