@@ -3,7 +3,7 @@ document.getElementById("usuarioForm").addEventListener("submit", function(event
   const usuario = document.getElementById("name").value;
   const email = document.getElementById("email").value;
 
-  fetch('http://localhost:3000/auth', {
+  fetch('http://135.237.224.116:3000/auth', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
