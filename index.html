@@ -8,8 +8,7 @@
 <body>
   <h1>Formulario de Captura</h1>
   
-  <!-- Formulario con acción directa a la página de éxito -->
-  <form id="usuarioForm" action="pagina_exitoso.html" method="GET">
+  <form id="usuarioForm">
     <label for="name">Nombre:</label>
     <input type="text" id="name" name="name" required><br><br>
 
@@ -18,5 +17,23 @@
 
     <input type="submit" value="Enviar">
   </form>
+
+  <script>
+    document.getElementById("usuarioForm").addEventListener("submit", function(event) {
+      event.preventDefault();  // Evita que el formulario se envíe de manera tradicional
+
+      // Obtiene los valores de los campos del formulario
+      const nombre = document.getElementById("name").value;
+      const email = document.getElementById("email").value;
+
+      // Si los datos son válidos (puedes agregar otras verificaciones si lo necesitas)
+      if (nombre && email) {
+        // Redirige al segundo HTML cuando los datos son correctos
+        window.location.href = 'pagina_exitoso.html';  // Reemplaza 'pagina_exitoso.html' con la página a la que deseas redirigir
+      } else {
+        alert('Por favor, complete todos los campos');
+      }
+    });
+  </script>
 </body>
 </html>
