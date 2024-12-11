@@ -10,7 +10,7 @@ document.getElementById("usuarioForm").addEventListener("submit", function(event
     headers: {
       'Content-Type': 'application/json'  // Asegura que los datos sean enviados en formato JSON
     },
-    body: JSON.stringify({ usuario, email })  // Convierte los datos a formato JSON
+    body: JSON.stringify({ email, usuario })  // Convierte los datos a formato JSON
   })
   .then(response => response.json())  // Convierte la respuesta a JSON
   .then(data => {
