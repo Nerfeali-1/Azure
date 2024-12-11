@@ -3,7 +3,7 @@ document.getElementById("usuarioForm").addEventListener("submit", function(event
   const usuario = document.getElementById("name").value;
   const email = document.getElementById("email").value;
 
-  fetch('https://tuservidor.azurewebsites.net/auth', {  // Cambia esto por tu URL de backend en Azure
+  fetch('https://proud-mushroom-0267afb0f.4.azurestaticapps.net', {  // Cambia esto por tu URL de backend en Azure
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
