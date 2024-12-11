@@ -1,17 +1,24 @@
-document.getElementById("dataForm").addEventListener("submit", function(event){
+document.getElementById("usuarioForm").addEventListener("submit", function(event) {
   event.preventDefault();
-  const name = document.getElementById("name").value;
+  const usuario = document.getElementById("name").value;
   const email = document.getElementById("email").value;
 
-  // Envía los datos al servidor de backend (esto se explica más abajo)
-  fetch('https://your-app.azurewebsites.net/api/submit', {
+  // Envía los datos al servidor de backend para autenticación
+  fetch('http://localhost:3000/auth', {  // Cambia la URL si es necesario
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
     },
-    body: JSON.stringify({ name, email })
+    body: JSON.stringify({ usuario, email })
   })
   .then(response => response.json())
-  .then(data => console.log('Datos guardados correctamente', data))
+  .then(data => {
+    if (data.message === 'Autenticación exitosa') {
+      // Si la autenticación es exitosa, redirigir a otra página
+      window.location.href = 'pagina_exitoso.html'; // Cambia por la página de destino
+    } else {
+      alert('Usuario o correo incorrectos');
+    }
+  })
   .catch(error => console.error('Error:', error));
 });
