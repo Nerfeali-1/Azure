@@ -4,7 +4,7 @@ document.getElementById("usuarioForm").addEventListener("submit", function(event
   const email = document.getElementById("email").value;
 
   // Envía los datos al servidor de backend para autenticación
-  fetch('http://localhost:3000/auth', {  // Cambia la URL si es necesario
+  fetch('http://135.237.224.116:3000/auth', {  // Cambia la URL si es necesario
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
